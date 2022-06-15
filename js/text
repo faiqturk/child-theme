@@ -1,0 +1,98 @@
+// jQuery(document).ready(function($){  
+    
+    
+//     $("#keyword").on("keyup",function(){
+//         var keyword = $(this).val();
+
+//         jQuery.ajax({
+//             url:   ajax_object.ajaxurl,
+//             type: 'POST',
+//             data: { 
+//                 action: 'data_fetch',  
+//                 keyword: keyword 
+//             },
+//             success: function(data) {
+//                 jQuery('#datafetch').html( data );
+//             }
+//         });
+
+// });
+
+
+
+
+    // $("#mySelect").change(function(){
+    //     var key = $(this).find("selected");
+    //     var key = $(this).val();
+    //     alert(key);
+    //    
+    //     
+
+    //     jQuery.ajax({
+    //         url:   ajax_object.ajaxurl,
+    //         type: 'POST',
+    //         data: { 
+    //             action: 'data_fetch',  
+    //              keyword: keyword 
+    //         },
+    //         success: function(data) {
+    //             jQuery('#datafetch').html( data );
+    //         }
+    //     });
+    // });
+
+
+
+
+
+
+    <select id="language">
+<option value="asc">Sorting By Ascending</option>
+<option value="desc">Sorting By Decending</option>
+<option value="old">Sorting By Oldest</option>
+<option value="new" >Sorting By Newest</option>
+</select>
+
+
+
+
+
+$("#language").change(function(){
+        var keyword = $(this).find("option:selected").text();
+        var keyword = $(this).val();
+        // alert(keyword);
+        jQuery.ajax({
+            url:   ajax_object.ajaxurl,
+            type: 'POST',
+            data: { 
+                action: 'data_drop',  
+                keyword: keyword 
+            },
+            success: function(data) {
+                jQuery('#datafetch').html( data );
+            }
+        });
+
+    
+
+    });
+    
+$("#mySelect").change(function()
+{
+    var keyword = $(this).find("option:selected").text();
+    var keyword = $(this).val();
+    // alert(keyword);
+    jQuery.ajax({
+        url:   ajax_object.ajaxurl,
+        type: 'POST',
+        data: 
+        { 
+            action: 'data_drop',  
+            keyword: keyword 
+        },
+        success: function(data) {
+            jQuery('#datafetch').html( data );
+        }
+    });
+});
+});
